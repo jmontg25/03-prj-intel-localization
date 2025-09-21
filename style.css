@@ -1,0 +1,121 @@
+/* Add your CSS here */
+
+/* Intel-branded background for header */
+header {
+  background: #0071c5; /* Intel blue */
+  color: white;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+/* Resize and center the Intel logo */
+header img {
+  width: 120px; /* Adjust size as needed */
+  margin-bottom: 16px;
+}
+
+/* Main heading style */
+header h1 {
+  font-size: 2.2em;
+  margin: 0 0 12px 0;
+}
+
+/* Subheading style */
+header p {
+  font-size: 1.1em;
+  margin-bottom: 0;
+}
+
+/* Timeline section uses flexbox for horizontal scroll on desktop */
+.timeline {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling */
+  gap: 20px; /* Space between cards */
+  padding: 24px 0;
+  scroll-snap-type: x mandatory; /* Scroll snap for extra credit */
+}
+
+/* Each card styles */
+.card {
+  background: #f4f8fb; /* Light Intel blue */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+  min-width: 260px;
+  max-width: 300px;
+  flex: 0 0 auto; /* Prevent cards from shrinking */
+  padding: 16px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+  scroll-snap-align: start; /* Snap each card */
+}
+
+/* Card image styles */
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.03); /* Slight lift and scale */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15); /* Stronger shadow */
+}
+
+/* Hide extra details by default */
+.card-details {
+  display: none;
+}
+
+/* Show details on hover */
+.card:hover .card-details {
+  display: block;
+  background: #e3f2fd;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 8px;
+  font-size: 0.95em;
+}
+
+/* Use a clean, modern font similar to Intel's */
+body, h1, h2, h3, p {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* Intel-like font */
+}
+
+/* Color the years (h2 in each card) to Intel blue */
+.card h2 {
+  color: #0071c5; /* Intel blue */
+  font-weight: bold; /* Make the year stand out */
+}
+
+/* Responsive: stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .timeline {
+    flex-direction: column;
+    overflow-x: visible;
+    gap: 16px;
+  }
+  .card {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Footer message stays fixed at the bottom of the page */
+body > p {
+  position: fixed;         /* Fixes the element to the viewport */
+  left: 0;                 /* Aligns to the left edge */
+  bottom: 0;               /* Aligns to the bottom edge */
+  width: 100%;             /* Stretches across the page */
+  background: #0071c5;     /* Intel blue background for visibility */
+  color: white;            /* White text for contrast */
+  text-align: center;      /* Centers the text */
+  margin: 0;               /* Removes default margin */
+  padding: 12px 0;         /* Adds space above and below text */
+  font-size: 1em;          /* Keeps font readable */
+  z-index: 100;            /* Ensures it stays above other elements */
+}
+
+/* Add comments to help students understand each part */
+/* See above for explanations in each section */
